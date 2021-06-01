@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');// $background: #212121;
+$background: rgb(231, 236, 227);
+$primaryColor: #43e673;
+$text: black;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: darken($color: $background, $amount:5)
+}
+
+.btn{
+    padding: 0.6rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size:1rem;
+    border-radius: 5px;
+    &-primary{
+        background:  $primaryColor;
+        color: $text;
+    }
+    &-white{
+        background: white;
+        color: $primaryColor;
+    }
+}
+a{
+    text-decoration: none;
+    color: $text;
+}
+
+.App{
+    .app-container{
+        display:flex;
+    }
+    .Header{
+        width: 100%;
+        color: white;
+
+        
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+        z-index: 2;
+        position: fixed;
+        top: 0;left: 0;
+        .container{
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            width: 100%;
+            background: $primaryColor;
+            align-items:center;
+            padding: 0 2rem;
+            .header-left{
+                .brand{
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                }
+                align-items: center;
+                justify-content: space-between;
+                display: flex;
+                
+            }
+        }
+    }
+    .Sidebar{
+        width: 280px;
+        height: 100vh;
+        background: darken($color: $background, $amount: 10);
+        padding-top: 60px;
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+        color: $text;
+        transition: all 0.5;
+        &.compress{
+            transition: all 0.5;
+            width: 60px;
+            overflow: hidden;
+            .content{
+                .text{
+                    visibility: hidden;
+                }
+            }
+        }
+        .content{
+            width: 100%;
+            height: 100%;
+            padding: 0.75rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.5;
+            .sidebar-item{
+                padding: 1rem;
+                transition: all 0.35s;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                color: $text;
+                svg{margin-right: 0.5rem;}
+                
+                &:hover{
+                    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                    background: darken($color: $background, $amount: 20);
+
+                }
+            }
+            .active{
+                    background: darken($color: $background, $amount: 20);
+                    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            }
+        }
+    }
+
+    .Viewport{
+        height: 100vh;
+        width: 100%;
+        padding-top: 60px;
+        overflow: auto;
+        color: $text;
+        .container{
+            padding: 0.75rem 1rem;
+        }
+    }
+
+    .Users{
+        .MuiDataGrid{
+            &-root{
+                color: $text;
+                border: none;
+                background: darken($color: $background, $amount:10);
+                box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            }
+            &-columnSeparator{
+                color: $background;
+            }
+            
+        }
+        .MuiTypography-colorInherit{
+                color: $text;
+            }
+    }
+
+    .view{
+        padding: 1.5rem 2rem;
+        h1{margin: 1rem 1.5rem}
+    }
+
+    .Reports{
+        .content{
+            // padding: 0.5rem;
+            background: darken($color: $background, $amount:10);
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            .card{
+                padding: 0.5rem 1rem;
+                background: darken($color: $background, $amount:15);
+                // box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                //     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                //     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                // bor  der-radius: 5px;
+                // margin-bottom: 0.5rem;
+                border-bottom: 1px solid grey;
+                min-height: fit-content;
+                display: flex;
+                flex-direction:column;
+                cursor: pointer;
+                small{
+                    align-self: flex-end;
+                }
+                
+                    &:hover{
+                        background: darken($color: $background, $amount:18);
+                    }
+                    &:last-child{
+                        border-bottom: none ;
+                    }
+            }
+        }
+    }
+
+    .Issues{
+        .content{
+            // padding: 0.5rem;
+            background: darken($color: $background, $amount:10);
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            .item{
+                padding: 0.5rem 1rem;
+                border-bottom: 1px solid grey;
+                cursor: pointer;
+                &:hover{
+                    background: darken($color: $background, $amount:15);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap');
+$background: rgb(228, 226, 226);
+$primaryColor: #d0021b;
+$text: black;
+    
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background: darken($color: $background, $amount:5);
+
+}
+
+.btn{
+    padding: 0.6rem 1rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size:1rem;
+    border-radius: 5px;
+    &-primary{
+        background:  $primaryColor;
+        color:  $text;
+    }
+    &-white{
+        background: white;
+        color: $primaryColor;
+    }
+}
+a{
+    text-decoration: none;
+    color:  $text;
+}
+
+.App{
+    .app-container{
+        display:flex;
+    }
+    .Header{
+        width: 100%;
+        color:  white;
+        font-family: 'Open Sans Condensed', sans-serif;
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+        z-index: 2;
+        position: fixed;
+        top: 0;left: 0;
+        .container{
+            display: flex;
+            justify-content: space-between;
+            height: 60px;
+            width: 100%;
+            background: $primaryColor;
+            align-items:center;
+            padding: 0 2rem;
+            .header-left{
+                .brand{
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                }
+                align-items: center;
+                justify-content: space-between;
+                display: flex;
+                
+            }
+        }
+    }
+    .Sidebar{
+        width: 280px;
+        height: 100vh;
+        font-family: 'Open Sans Condensed', sans-serif;
+        background: darken($color: $background, $amount: 10);
+        padding-top: 60px;
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+        color:  $text;
+        transition: all 0.5;
+        &.compress{
+            transition: all 0.5;
+            width: 60px;
+            overflow: hidden;
+            .content{
+                .text{
+                    visibility: hidden;
+                }
+            }
+        }
+        .content{
+            width: 100%;
+            height: 100%;
+            padding: 0.75rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.5;
+            .sidebar-item{
+                padding: 1rem;
+                transition: all 0.35s;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                color:  $text;
+                svg{margin-right: 0.5rem;}
+                
+                &:hover{
+                    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                    background: darken($color: $background, $amount: 20);
+
+                }
+            }
+            .active{
+                    background: darken($color: $background, $amount: 20);
+                    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            }
+        }
+    }
+
+    .Viewport{
+        height: fit-content;
+        width: 100%;
+        padding-top: 60px;
+        overflow: auto;
+        color:  $text;
+        .container{
+            padding: 0 1rem;
+            height: 100%;
+        }
+    }
+
+    .Users{
+        .MuiDataGrid{
+            &-root{
+                color:  $text;
+                border: none;
+                background: darken($color: $background, $amount:10);
+                box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            }
+            &-columnSeparator{
+                color: $background;
+            }
+            
+        }
+        .MuiTypography-colorInherit{
+                color:  $text;
+            }
+    }
+
+    .view{
+        padding: 0.5rem 2rem;
+        h1{margin: 1rem 1.5rem}
+    }
+
+    .Reports{
+        .content{
+            // padding: 0.5rem;
+            background: darken($color: $background, $amount:10);
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            .card{
+                padding: 0.5rem 1rem;
+                background: darken($color: $background, $amount:10);
+                // box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                //     0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                //     0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                // bor  der-radius: 5px;
+                // margin-bottom: 0.5rem;
+                border-bottom: 1px solid grey;
+                min-height: fit-content;
+                display: flex;
+                flex-direction:column;
+                cursor: pointer;
+                small{
+                    align-self: flex-end;
+                }
+                
+                    &:hover{
+                        background: darken($color: $background, $amount:18);
+                    }
+                    &:last-child{
+                        border-bottom: none ;
+                    }
+            }
+        }
+    }
+
+    .Issues{
+        .content{
+            // padding: 0.5rem;
+            background: darken($color: $background, $amount:10);
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            .item{
+                padding: 0.5rem 1rem;
+                border-bottom: 1px solid grey;
+                cursor: pointer;
+                &:hover{
+                    background: darken($color: $background, $amount:15);
+                }
+            }
+        }
+    }
+
+    .Dashboard{
+        height: 100%;
+        .counters-display{
+            height:90px;
+            // background: darken($color: $background, $amount:15);
+            padding: 0.5rem 1rem;
+            display: flex;
+            justify-content: space-evenly;
+            border-radius: 5px;
+            
+            .counter{
+                background: lighten($color: $background, $amount:5);
+                // background: $background;
+                height: 100%;
+                width: 160px;
+                display: flex;
+                flex-direction:column;
+                align-items: center;
+                justify-content:space-evenly;
+                border-radius: 5px;
+                box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+
+                .count{
+                    font-size: 2rem;
+                    font-weight: 700;
+                    
+                }
+            }
+        }
+
+        .chart-container{
+            margin: auto;
+            background: darken($color: $background, $amount: 10);
+            // height: calc( 100% - 168px);
+            height: fit-content;
+            width: fit-content;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: center;
+            margin-top: 1rem;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            padding: 1rem;
+            grid-gap: 1rem;
+        
+            .chart{
+                background: lighten($color: $background, $amount:5);
+                height: 30vh;
+                padding: 1rem;
+                width: 30vw;
+                border-radius: 5px;
+                position: relative;
+            }
+        }
+    }
+
+    .Login{
+        height: calc(100vh - 60px);
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        .content{
+            height: 300px;
+            width: 350px;
+            background: rgb(235, 229, 229);
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+            0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+            0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+            .header{
+                height: 25%;
+                display: flex;
+                align-items: center;
+                justify-content:center;
+                font-family: 'Open Sans Condensed', sans-serif;
+                color: white;
+                background: $primaryColor;
+                border-radius: 5px 5px 0 0;
+            }
+            .form-container{
+                height: 75%;
+                padding: 1rem 1.5rem;
+                .form-input{
+                    margin-bottom: 1rem;
+                    label, input{display: block;}
+                    label{margin-bottom: 0.25rem;}
+                    input{
+                        width: 100%;
+                        height: 38px;
+                        border-radius: 5px;
+                        border: 1px solid #b33d4a;
+                        padding: 0.15rem 0.4rem;
+                        font-size: 0.9rem;
+                        appearance: none;
+                        &:focus{
+                            outline: none;
+                            border: 2px solid #b33d4a;
+                        }
+                    }
+                    
+                }
+                button{
+                    width: 100%;
+                    padding: 0.5rem 1rem;
+                    color: white;
+                    background: $primaryColor;
+                    border-radius: 5px;
+                    border: none;
+                    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.20),
+                    0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                    0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+                    &:hover{
+                        background-color: lighten($color: $primaryColor, $amount: 5);
+                    }
+                }
+            }
+        }
+    }
+}
